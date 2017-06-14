@@ -1,7 +1,7 @@
 ---
 name: baker-test
 vagrant:
-  box: "ubuntu/xenial64"
+  box: "ubuntu/trusty64"
   memory:
     prompt: "how much memory?"
   network:
@@ -19,7 +19,7 @@ vagrant:
 
 bake:
   ansible:
-    source: roles/
+    source: deployment/
     playbooks:
       - node.yml
       - python.yml

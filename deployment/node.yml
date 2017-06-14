@@ -30,8 +30,20 @@
         validate_certs=False
     - name: Add NodeSource deb repository
       become: yes
-      apt_repository: repo='deb https://deb.nodesource.com/node_6.x {{ ansible_distribution_release }} main' state=present
+      apt_repository: repo='deb https://deb.nodesource.com/node_6.x trusty main' state=present
 
     - name: Install Node.js
       become: yes
       apt: pkg=nodejs state=installed update_cache=yes
+
+    - name: Copy express server files
+      copy:
+        src: express/
+        dest: "/home/{{ansible_user}}/express"
+        mode: 0700
+
+    - name: Install dependencies
+      shell: "cd /home/{{ansible_user}}/express/ && npm install"
+
+    - name: Start express server
+      shell: "cd /home/{{ansible_user}}/express/ && npm run forever"
