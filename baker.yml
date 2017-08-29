@@ -11,12 +11,6 @@ vagrant:
           prompt: "Port for express server?"
     - private_network:
         ip: 192.168.22.22
-  synced_folders:
-    - folder:
-        src:
-          prompt: "What host folder to sync for projects?"
-        dest: "/code"
-
 bake:
   ansible:
     source: deployment/
