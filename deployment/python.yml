@@ -1,5 +1,5 @@
 ---
-- hosts: baker-test
+- hosts: all
   gather_facts: no
 
   # Python 2 is missing by default in ubuntu 16.

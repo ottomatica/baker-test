@@ -1,5 +1,5 @@
 ---
-- hosts: baker-test
+- hosts: all
   gather_facts: no
 
   tasks:
