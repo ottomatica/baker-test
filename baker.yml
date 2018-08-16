@@ -4,4 +4,6 @@ vm:
   ip: 192.168.22.22
 lang:
   - nodejs9
-start: cd /baker-test/deployment/express && npm install && node index.js
+# start: cd /baker-test/deployment/express && node index.js
+commands:
+  serve: cd /baker-test/deployment/express && npm install && node index.js
